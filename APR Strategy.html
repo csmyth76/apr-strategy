@@ -11818,14 +11818,33 @@ $( document ).ready(function(){
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="k">as</span> <span class="nn">py</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 <span class="kn">from</span> <span class="nn">plotly</span> <span class="k">import</span> <span class="n">tools</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script><script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window._Plotly) {require(['plotly'],function(plotly) {window._Plotly=plotly;});}</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -12640,7 +12659,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apr</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -12653,7 +12672,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apr</span><span class="p">[</span><span class="s1">&#39;apr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_apr</span><span class="p">[</span><span class="s1">&#39;apr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
@@ -12666,7 +12685,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_apr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -12683,7 +12702,7 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -12787,7 +12806,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df_test_group = df_clean.copy()</span>
@@ -12800,7 +12819,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df_test_group[&#39;apr_test_group&#39;] = np.where(df_test_group[&#39;apr_test_group&#39;].str.contains(&#39;test&#39;),1,0)</span>
@@ -12813,7 +12832,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df_clean = df_test_group.copy()</span>
@@ -12835,7 +12854,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_analysis</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -12856,7 +12875,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fico_counts</span><span class="p">():</span>
@@ -12897,12 +12916,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[131]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/146.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/228.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -12921,7 +12940,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">apr_counts</span><span class="p">():</span>
@@ -12964,12 +12983,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[134]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/152.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/230.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -12996,7 +13015,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span> <span class="k">def</span> <span class="nf">fico_test</span><span class="p">():</span>
@@ -13047,12 +13066,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[56]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/80.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/232.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13071,7 +13090,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_apr_sale_ctrl</span><span class="p">():</span>
@@ -13152,12 +13171,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[110]:</div>
+<div class="prompt output_prompt">Out[26]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/116.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/234.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13176,7 +13195,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_apr_test</span><span class="p">():</span>
@@ -13277,12 +13296,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[111]:</div>
+<div class="prompt output_prompt">Out[27]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/118.embed" height="500px" width="700px"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/236.embed" height="500px" width="700px"></iframe>
 </div>
 
 </div>
@@ -13312,7 +13331,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_apr_fico</span><span class="p">():</span>
@@ -13379,12 +13398,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/44.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/238.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13404,7 +13423,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_test</span><span class="p">():</span>
@@ -13444,12 +13463,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[50]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/72.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/240.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13469,7 +13488,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_apr_fico</span><span class="p">():</span>
@@ -13536,12 +13555,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/82.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/242.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13561,7 +13580,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_sales</span><span class="p">():</span>
@@ -13601,12 +13620,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[60]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/88.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/244.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13626,7 +13645,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span> <span class="k">def</span> <span class="nf">fico_test</span><span class="p">():</span>
@@ -13677,12 +13696,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[32]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/90.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/246.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13703,7 +13722,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_apr_sale_test</span><span class="p">():</span>
@@ -13784,12 +13803,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[146]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/172.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/248.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -13819,7 +13838,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_margin</span> <span class="o">=</span> <span class="n">df_analysis</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -13837,7 +13856,7 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[79]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13939,7 +13958,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">margin_overall</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;margin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13971,7 +13990,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">margin_per_sale</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;converted to sale&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">][</span><span class="s1">&#39;margin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -14003,7 +14022,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">margin_per_application</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;margin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -14052,7 +14071,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">apr_fmargin_sale</span><span class="p">():</span>
@@ -14095,12 +14114,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[147]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/174.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/250.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -14128,7 +14147,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fico_fmargin_sale</span><span class="p">():</span>
@@ -14169,12 +14188,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[100]:</div>
+<div class="prompt output_prompt">Out[40]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/112.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/252.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -14202,7 +14221,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[144]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tmargin_700</span><span class="p">():</span>
@@ -14244,12 +14263,12 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[144]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/170.embed" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/254.embed" height="525px" width="100%"></iframe>
 </div>
 
 </div>
@@ -14260,22 +14279,22 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tmargin_600</span><span class="p">():</span>
-    <span class="n">tmargin_700_44</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;fico&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">600</span><span class="p">)</span> 
+    <span class="n">tmargin_600_44</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;fico&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">600</span><span class="p">)</span> 
               <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;converted to sale&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
               <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;apr&#39;</span><span class="p">]</span><span class="o">==</span><span class="mf">4.4</span><span class="p">)][</span><span class="s1">&#39;margin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-    <span class="n">tmargin_700_54</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;fico&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">600</span><span class="p">)</span> 
+    <span class="n">tmargin_600_54</span> <span class="o">=</span> <span class="n">df_margin</span><span class="p">[(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;fico&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">600</span><span class="p">)</span> 
               <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;converted to sale&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
               <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_margin</span><span class="p">[</span><span class="s1">&#39;apr&#39;</span><span class="p">]</span><span class="o">==</span><span class="mf">5.4</span><span class="p">)][</span><span class="s1">&#39;margin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 
     <span class="c1"># Create a trace</span>
     <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">tmargin_700_30</span><span class="p">,</span><span class="n">tmargin_700_40</span><span class="p">,</span><span class="n">tmargin_700_44</span><span class="p">,</span><span class="n">tmargin_700_54</span><span class="p">],</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">tmargin_600_44</span><span class="p">,</span><span class="n">tmargin_600_54</span><span class="p">],</span>
         <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.4</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">],</span>
         <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;lines+markers&#39;</span>
     <span class="p">)</span>
@@ -14303,14 +14322,90 @@ dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[143]:</div>
+<div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">PlotlyRequestError</span>                        Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-42-7dd8cc75764c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     26</span>     <span class="ansi-green-fg">return</span> fig
+<span class="ansi-green-intense-fg ansi-bold">     27</span> fig <span class="ansi-blue-fg">=</span> tmargin_600<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 28</span><span class="ansi-red-fg"> </span>py<span class="ansi-blue-fg">.</span>iplot<span class="ansi-blue-fg">(</span>fig<span class="ansi-blue-fg">)</span>
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~csmyth76/168.embed" height="525px" width="100%"></iframe>
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/plotly/plotly/plotly.py</span> in <span class="ansi-cyan-fg">iplot</span><span class="ansi-blue-fg">(figure_or_data, **plot_options)</span>
+<span class="ansi-green-intense-fg ansi-bold">    140</span>     <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#39;auto_open&#39;</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> plot_options<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    141</span>         plot_options<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;auto_open&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">False</span>
+<span class="ansi-green-fg">--&gt; 142</span><span class="ansi-red-fg">     </span>url <span class="ansi-blue-fg">=</span> plot<span class="ansi-blue-fg">(</span>figure_or_data<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>plot_options<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    143</span> 
+<span class="ansi-green-intense-fg ansi-bold">    144</span>     <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>figure_or_data<span class="ansi-blue-fg">,</span> dict<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/plotly/plotly/plotly.py</span> in <span class="ansi-cyan-fg">plot</span><span class="ansi-blue-fg">(figure_or_data, validate, **plot_options)</span>
+<span class="ansi-green-intense-fg ansi-bold">    237</span>     data <span class="ansi-blue-fg">=</span> fig<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;data&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    238</span>     plot_options<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;layout&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> fig<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;layout&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 239</span><span class="ansi-red-fg">     </span>response <span class="ansi-blue-fg">=</span> v1<span class="ansi-blue-fg">.</span>clientresp<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>plot_options<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    240</span> 
+<span class="ansi-green-intense-fg ansi-bold">    241</span>     <span class="ansi-red-fg"># Check if the url needs a secret key</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/plotly/api/v1/clientresp.py</span> in <span class="ansi-cyan-fg">clientresp</span><span class="ansi-blue-fg">(data, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     33</span> 
+<span class="ansi-green-intense-fg ansi-bold">     34</span>     url <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;{plotly_domain}/clientresp&#39;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>cfg<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 35</span><span class="ansi-red-fg">     </span>response <span class="ansi-blue-fg">=</span> request<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;post&#39;</span><span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">=</span>payload<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     36</span> 
+<span class="ansi-green-intense-fg ansi-bold">     37</span>     <span class="ansi-red-fg"># Old functionality, just keeping it around.</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/retrying.py</span> in <span class="ansi-cyan-fg">wrapped_f</span><span class="ansi-blue-fg">(*args, **kw)</span>
+<span class="ansi-green-intense-fg ansi-bold">     47</span>             <span class="ansi-blue-fg">@</span>six<span class="ansi-blue-fg">.</span>wraps<span class="ansi-blue-fg">(</span>f<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     48</span>             <span class="ansi-green-fg">def</span> wrapped_f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kw<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 49</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> Retrying<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>dargs<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>dkw<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>call<span class="ansi-blue-fg">(</span>f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kw<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     50</span> 
+<span class="ansi-green-intense-fg ansi-bold">     51</span>             <span class="ansi-green-fg">return</span> wrapped_f
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/retrying.py</span> in <span class="ansi-cyan-fg">call</span><span class="ansi-blue-fg">(self, fn, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    204</span> 
+<span class="ansi-green-intense-fg ansi-bold">    205</span>             <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>should_reject<span class="ansi-blue-fg">(</span>attempt<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 206</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> attempt<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>_wrap_exception<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    207</span> 
+<span class="ansi-green-intense-fg ansi-bold">    208</span>             delay_since_first_attempt_ms <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>round<span class="ansi-blue-fg">(</span>time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">*</span> <span class="ansi-cyan-fg">1000</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> start_time
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/retrying.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-fg">(self, wrap_exception)</span>
+<span class="ansi-green-intense-fg ansi-bold">    245</span>                 <span class="ansi-green-fg">raise</span> RetryError<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    246</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 247</span><span class="ansi-red-fg">                 </span>six<span class="ansi-blue-fg">.</span>reraise<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>value<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>value<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>value<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    248</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    249</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>value
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/six.py</span> in <span class="ansi-cyan-fg">reraise</span><span class="ansi-blue-fg">(tp, value, tb)</span>
+<span class="ansi-green-intense-fg ansi-bold">    684</span>         <span class="ansi-green-fg">if</span> value<span class="ansi-blue-fg">.</span>__traceback__ <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> tb<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    685</span>             <span class="ansi-green-fg">raise</span> value<span class="ansi-blue-fg">.</span>with_traceback<span class="ansi-blue-fg">(</span>tb<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 686</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> value
+<span class="ansi-green-intense-fg ansi-bold">    687</span> 
+<span class="ansi-green-intense-fg ansi-bold">    688</span> <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/retrying.py</span> in <span class="ansi-cyan-fg">call</span><span class="ansi-blue-fg">(self, fn, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    198</span>         <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    199</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 200</span><span class="ansi-red-fg">                 </span>attempt <span class="ansi-blue-fg">=</span> Attempt<span class="ansi-blue-fg">(</span>fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> attempt_number<span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    201</span>             <span class="ansi-green-fg">except</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    202</span>                 tb <span class="ansi-blue-fg">=</span> sys<span class="ansi-blue-fg">.</span>exc_info<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/plotly/api/v1/utils.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(method, url, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     88</span>         content <span class="ansi-blue-fg">=</span> response<span class="ansi-blue-fg">.</span>content <span class="ansi-green-fg">if</span> response <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">&#39;No content&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">     89</span>         <span class="ansi-green-fg">raise</span> exceptions<span class="ansi-blue-fg">.</span>PlotlyRequestError<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> status_code<span class="ansi-blue-fg">,</span> content<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 90</span><span class="ansi-red-fg">     </span>validate_response<span class="ansi-blue-fg">(</span>response<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     91</span>     <span class="ansi-green-fg">return</span> response
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/plotly/api/v1/utils.py</span> in <span class="ansi-cyan-fg">validate_response</span><span class="ansi-blue-fg">(response)</span>
+<span class="ansi-green-intense-fg ansi-bold">     38</span>         message <span class="ansi-blue-fg">=</span> content <span class="ansi-green-fg">if</span> content <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">&#39;No Content&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">     39</span> 
+<span class="ansi-green-fg">---&gt; 40</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> exceptions<span class="ansi-blue-fg">.</span>PlotlyRequestError<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> status_code<span class="ansi-blue-fg">,</span> content<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     41</span> 
+<span class="ansi-green-intense-fg ansi-bold">     42</span> 
+
+<span class="ansi-red-fg">PlotlyRequestError</span>: Hi there, you&#39;ve reached the threshold of 100 combined image exports and chart saves per 24h period. If you need to raise your daily limit, please consider upgrading to a paid plan
+(see: https://plot.ly/products/cloud ).</pre>
 </div>
-
 </div>
 
 </div>
